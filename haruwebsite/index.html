@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- 1. Title 태그: 검색 결과의 제목 (50~60자 권장) -->
+    <!-- 가장 중요한 태그입니다. '사이트 이름 | 핵심 내용' 또는 '핵심 내용 - 사이트 이름' 형식을 많이 사용합니다. -->
+    <title>하루 | 당신을 바꾸는 가장 강력한 변화</title>
+
+    <!-- 2. Description 메타 태그: 검색 결과의 설명 (150~160자 권장) -->
+    <!-- 사용자의 클릭을 유도하는 매력적인 문장으로 작성합니다. -->
+    <meta name="description" content="번아웃 사회초년생 직장인을 위한 하루 솔루션">
+
+    <!-- 3. Open Graph (og:) 태그: 카카오톡, 페이스북 등 소셜 미디어 공유 시 표시될 정보 -->
+    <!-- og:image는 사용자의 클릭률에 큰 영향을 미칩니다. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="haRU">
+    <meta property="og:title" content="당신을 바꾸는 가장 강력한 변화화">
+    <meta property="og:description" content="번아웃 사회초년생 직장인을 위한 하루 솔루션">
+    <meta property="og:image" content="https://ha-ru-five.vercel.app/">
+    <meta property="og:url" content="https://ha-ru-five.vercel.app/">
+
+    <!-- 4. Twitter Card 태그: 트위터 공유 시 표시될 정보 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://your-project-name.vercel.app/og-image.png">
+
+    <meta name="naver-site-verification" content="7d0ccaf956611cf4d8fdf06f8149bf2e09dd5db8" />
+    <!-- Google Fonts: Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- CSS Reset & Global Styles --- */
+      :root {
+        /* 🎨 컬러 시스템 (Color System) */
+        --primary-green: #2e4f4f; /* 주요 색상 (차분하고 깊은 녹색) */
+        --secondary-purple: #584b53; /* 보조 색상 (지적이고 고급스러운 보라) */
+        --accent-black: #0c0c0c; /* 강조 색상 (선명한 검정) */
+        --bg-color: #f9f9f9; /* 배경 색상 (부드러운 오프화이트) */
+        --text-color: #333333; /* 기본 텍스트 색상 */
+        --white-color: #ffffff; /* 흰색 */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* --- 헤더 스타일 (Header Styles) --- */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--white-color);
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .header-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-black);
+        text-decoration: none;
+      }
+
+      .header-logo span {
+        color: var(--primary-green);
+      }
+
+      .header-nav {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+
+      .header-nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .header-nav a:hover {
+        color: var(--primary-green);
+      }
+
+      .header-cta {
+        padding: 10px 25px;
+        background-color: var(--primary-green);
+        color: var(--white-color);
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .header-cta:hover {
+        background-color: var(--secondary-purple);
+        transform: translateY(-2px);
+      }
+
+      /* 모바일 메뉴 토글 버튼 */
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--accent-black);
+      }
+
+      /* 모바일 메뉴 드롭다운 */
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white-color);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #eee;
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--text-color);
+        text-decoration: none;
+        border-bottom: 1px solid #f5f5f5;
+        transition: background-color 0.3s ease;
+      }
+
+      .mobile-menu a:hover {
+        background-color: #f9f9f9;
+        color: var(--primary-green);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 100px 20px;
+      }
+
+      section {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 스크롤 애니메이션을 위한 초기 상태 */
+      section:not(#hero) {
+        opacity: 1;
+        transform: translateY(30px);
+      }
+
+      section:not(#hero).visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+        color: var(--accent-black);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 35px;
+        background-color: var(--accent-black);
+        color: var(--white-color);
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        background-color: var(--primary-green);
+      }
+
+      /* --- 1. 히어로 섹션 (Hero Section) --- */
+      #hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-green) 0%,
+          var(--secondary-purple) 100%
+        );
+        color: var(--white-color);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin-top: 80px; /* 헤더 높이만큼 여백 추가 */
+        position: relative;
+        overflow: hidden;
+      }
+
+      #hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      #hero .hero-content {
+        max-width: 600px;
+        text-align: left;
+      }
+
+      #hero h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        color: var(--white-color);
+      }
+
+      #hero .brand-name {
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      #hero p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 40px;
+        opacity: 0.9;
+      }
+
+      #hero .cta-button {
+        background-color: var(--white-color);
+        color: var(--accent-black);
+      }
+
+      #hero .cta-button:hover {
+        background-color: var(--secondary-purple);
+        color: var(--white-color);
+      }
+
+      /* 히어로 갤러리 이미지 영역 */
+      .hero-gallery {
+        width: 100%;
+        height: 500px;
+      }
+
+      .gallery-item {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+
+      /* --- 2. 문제 제기 섹션 (Problem Section) --- */
+      #problem .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      #problem .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      #problem .section-title p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #666;
+      }
+
+      .problem-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .problem-card {
+        background-color: var(--white-color);
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      .problem-card .icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--primary-green);
+      }
+      .problem-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      .problem-card p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* --- 3. 해결 제안 섹션 (Solution Section) --- */
+      #solution {
+        background-color: var(--white-color);
+      }
+      #solution .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      #solution .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      #solution .section-title p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #666;
+      }
+      .solution-flow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+      .flow-step {
+        flex: 1;
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+      }
+      .flow-step .step-number {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 50%;
+        background-color: var(--secondary-purple);
+        color: var(--white-color);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .flow-step h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .flow-step p {
+        color: #555;
+      }
+      .flow-arrow {
+        font-size: 2.5rem;
+        color: var(--secondary-purple);
+        opacity: 0.5;
+      }
+
+      /* --- 4. 기능 및 혜택 섹션 (Features & Benefits) --- */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        align-items: center;
+      }
+      #features .section-title {
+        text-align: left;
+        margin-bottom: 40px;
+      }
+      #features .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      #features .section-title p {
+        font-size: 1.1rem;
+        color: #666;
+      }
+      .feature-card {
+        background-color: var(--white-color);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .feature-card .icon {
+        font-size: 2.5rem;
+        color: var(--primary-green);
+      }
+      .feature-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+      .feature-card p {
+        color: #555;
+      }
+
+      /* --- 5. 후기 섹션 (Testimonials Section) --- */
+      #testimonials {
+        background-color: var(--primary-green);
+      }
+      #testimonials .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      #testimonials .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--white-color);
+      }
+      .testimonial-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .testimonial-card {
+        background-color: var(--white-color);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      .testimonial-card::before {
+        content: "“";
+        font-size: 6rem;
+        font-weight: 900;
+        color: var(--primary-green);
+        opacity: 0.1;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+      .testimonial-card p.quote {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        z-index: 1;
+        position: relative;
+      }
+      .testimonial-card .author {
+        font-weight: 700;
+        color: var(--accent-black);
+      }
+      .testimonial-card .author span {
+        font-weight: 400;
+        color: #777;
+        margin-left: 8px;
+      }
+
+      /* --- 6. 최신 소식 섹션 (News Section) --- */
+      #news {
+        background-color: var(--white-color);
+      }
+      
+      #news .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      #news .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      
+      #news .section-title p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #666;
+      }
+
+      .news-container {
+        position: relative;
+        min-height: 400px;
+      }
+
+      /* 로딩 상태 */
+      .news-loading {
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid var(--primary-green);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .news-loading p {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      /* 에러 상태 */
+      .news-error {
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .error-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .news-error h3 {
+        color: #e74c3c;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .news-error p {
+        color: #666;
+        margin-bottom: 25px;
+      }
+
+      .retry-btn {
+        padding: 12px 25px;
+        background-color: var(--primary-green);
+        color: var(--white-color);
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .retry-btn:hover {
+        background-color: var(--secondary-purple);
+        transform: translateY(-2px);
+      }
+
+      /* 뉴스 그리드 */
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .news-card {
+        background-color: var(--white-color);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #f0f0f0;
+      }
+
+      .news-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .news-card-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        background-color: #f8f9fa;
+      }
+
+      .news-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .news-card:hover .news-card-image img {
+        transform: scale(1.05);
+      }
+
+      .news-card-image .placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #6c757d;
+        font-size: 2rem;
+      }
+
+      .news-card-content {
+        padding: 25px;
+      }
+
+      .news-card-date {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+
+      .news-card-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--accent-black);
+        margin-bottom: 15px;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .news-card-excerpt {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .news-card-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary-green);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+
+      .news-card-link:hover {
+        color: var(--secondary-purple);
+      }
+
+      .news-card-link::after {
+        content: "→";
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .news-card-link:hover::after {
+        transform: translateX(4px);
+      }
+
+      /* 더보기 버튼 */
+      .news-load-more {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .load-more-btn {
+        padding: 15px 35px;
+        background-color: var(--primary-green);
+        color: var(--white-color);
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .load-more-btn:hover {
+        background-color: var(--secondary-purple);
+        transform: translateY(-2px);
+      }
+
+      .load-more-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      /* --- 7. 콜투액션(CTA) 섹션 (Call to Action Section) --- */
+      #final-cta {
+        text-align: center;
+        background-color: var(--bg-color);
+        padding: 120px 20px;
+      }
+      #final-cta h2 {
+        font-size: 2.8rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.4;
+      }
+      #final-cta p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 40px;
+      }
+
+      /* --- 7. 푸터 (Footer) --- */
+      footer {
+        background-color: var(--accent-black);
+        color: #aab;
+        padding: 60px 20px;
+        text-align: center;
+      }
+      footer .footer-logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--white-color);
+        margin-bottom: 20px;
+      }
+      footer .footer-links a {
+        color: #aab;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s ease;
+      }
+      footer .footer-links a:hover {
+        color: var(--white-color);
+      }
+      footer .footer-info {
+        margin-top: 30px;
+        font-size: 0.9rem;
+      }
+      footer .copyright {
+        margin-top: 20px;
+        font-size: 0.8rem;
+        opacity: 0.7;
+      }
+
+      /* --- 모달 스타일 (Modal Styles) --- */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+      }
+
+      .modal-content {
+        background-color: var(--white-color);
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: modalSlideIn 0.3s ease-out;
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 20px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .close:hover {
+        color: var(--accent-black);
+      }
+
+      .modal-header {
+        padding: 30px 30px 20px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      .modal-header h2 {
+        color: var(--accent-black);
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+      }
+
+      .modal-header p {
+        color: #666;
+        font-size: 1rem;
+      }
+
+      #consultingForm {
+        padding: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent-black);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--primary-green);
+        box-shadow: 0 0 0 3px rgba(46, 79, 79, 0.1);
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: var(--primary-green);
+        color: var(--white-color);
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: var(--secondary-purple);
+        transform: translateY(-2px);
+      }
+
+      .submit-btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .success-message {
+        text-align: center;
+        padding: 40px 30px;
+      }
+
+      .success-message h3 {
+        color: var(--primary-green);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .success-message p {
+        color: #666;
+        font-size: 1rem;
+      }
+
+      /* --- 반응형 디자인 (Responsive Design) --- */
+      @media (max-width: 992px) {
+        .problem-cards {
+          grid-template-columns: 1fr;
+        }
+        .solution-flow {
+          flex-direction: column;
+        }
+        .flow-arrow {
+          transform: rotate(90deg);
+          margin: 30px 0;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        #features .feature-text {
+          margin-bottom: 40px;
+        }
+        .testimonial-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-nav {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .header-cta {
+          display: none;
+        }
+
+        .header {
+          position: relative;
+        }
+
+        .container {
+          padding: 80px 20px;
+        }
+
+        /* 히어로 섹션 모바일 반응형 */
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 0 20px;
+          text-align: center;
+        }
+
+        #hero .hero-content {
+          text-align: center;
+        }
+
+        #hero h1 {
+          font-size: 2.8rem;
+        }
+        #hero p {
+          font-size: 1.1rem;
+        }
+
+        .hero-gallery {
+          height: 300px;
+        }
+
+        #problem .section-title h2,
+        #solution .section-title h2,
+        #features .section-title h2,
+        #testimonials .section-title h2,
+        #news .section-title h2 {
+          font-size: 2.2rem;
+        }
+        #final-cta h2 {
+          font-size: 2.3rem;
+        }
+
+        /* 뉴스 섹션 모바일 반응형 */
+        .news-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .news-card-content {
+          padding: 20px;
+        }
+
+        .news-card-title {
+          font-size: 1.1rem;
+        }
+
+        .news-card-excerpt {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ====================================================== -->
+    <!-- 1. 헤더 (Header)                                      -->
+    <!-- 목적: 브랜드 로고, 메뉴, CTA 버튼을 포함하여 전체적인 디자인의 토대를 마련 -->
+    <!-- ====================================================== -->
+    <header class="header">
+      <div class="header-container">
+        <a href="#" class="header-logo">ha<span>RU</span> x LifeNote</a>
+        <nav class="header-nav">
+          <a href="#hero">홈</a>
+          <a href="#problem">문제</a>
+          <a href="#solution">해결</a>
+          <a href="#features">기능</a>
+          <a href="#testimonials">후기</a>
+          <a href="#news">최신소식</a>
+        </nav>
+        <a href="#final-cta" class="header-cta">무료 컨설팅 바로 신청하기</a>
+        <button class="mobile-menu-toggle">☰</button>
+      </div>
+      <div class="mobile-menu">
+        <a href="#hero">홈</a>
+        <a href="#problem">문제</a>
+        <a href="#solution">해결</a>
+        <a href="#features">기능</a>
+        <a href="#testimonials">후기</a>
+        <a href="#news">최신소식</a>
+        <a href="#final-cta">무료 컨설팅 신청</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ====================================================== -->
+      <!-- 1. 히어로 섹션 (Hero Section)                         -->
+      <!-- 목적: 강력한 첫인상과 브랜드 각인, 사용자의 갈망 자극, 핵심 가치 제안, 즉각적인 행동 유도 -->
+      <!-- ====================================================== -->
+      <section id="hero" class="visible">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="brand-name">HARU CONSULTING</span>
+            <h1>당신의 하루가 바뀌면,<br />인생의 모든 것이 달라집니다</h1>
+            <p>
+              더 이상 막연한 미래 때문에 불안해하지 마세요.<br />'하루'가 당신의
+              오늘을 강력하게 만들어, 빛나는 내일을 현실로 만듭니다.
+            </p>
+            <a href="#final-cta" class="cta-button"
+              >무료 컨설팅 바로 신청하기</a
+            >
+          </div>
+          <div class="hero-gallery">
+            <div class="gallery-item">
+              <img
+                src="images/라이프노트 활용 gif 파일.gif"
+                alt="라이프노트 활용 모습"
+              />
+              <div class="gallery-overlay">
+                <h3>라이프노트로 변화하는 하루</h3>
+                <p>체계적인 기록과 계획으로 목표 달성</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- 2. 문제 제기 섹션 (Problem Section)                   -->
+      <!-- 목적: 타겟 고객이 겪는 핵심적인 문제들을 제시하여 깊은 공감대를 형성하고, 해결책에 대한 필요성을 인지시킴 -->
+      <!-- ====================================================== -->
+      <section id="problem" class="container">
+        <div class="section-title">
+          <h2>혹시 당신도 이렇게 느끼시나요?</h2>
+          <p>
+            의지와 열정은 넘치지만, 보이지 않는 벽에 부딪혀 제자리를 맴도는 것
+            같은 기분. 당신 혼자만의 고민이 아닙니다.
+          </p>
+        </div>
+        <div class="problem-cards">
+          <div class="problem-card">
+            <div class="icon">📈</div>
+            <h3>계획만 세우다 끝나는 목표</h3>
+            <p>
+              매번 거창한 목표를 세우지만, 작심삼일로 끝나고 오히려 자책감만
+              늘어갑니다.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="icon">😟</div>
+            <h3>현재를 잠식하는 불안</h3>
+            <p>
+              오지 않은 미래에 대한 걱정 때문에 정작 중요한 '오늘'에 집중하지
+              못하고 에너지를 소진합니다.
+            </p>
+          </div>
+          <div class="problem-card">
+            <div class="icon">🛌</div>
+            <h3>벗어나고 싶은 무기력</h3>
+            <p>
+              무엇부터 시작해야 할지 막막하고, 해야 할 일은 쌓여있지만 아무것도
+              하고 싶지 않습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- 3. 해결 제안 섹션 (Solution Section)                 -->
+      <!-- 목적: 문제의 원인을 진단하고, 브랜드가 제안하는 명확하고 구조적인 해결책(솔루션)을 시각적으로 제시하여 신뢰감을 구축 -->
+      <!-- ====================================================== -->
+      <section id="solution" class="container">
+        <div class="section-title">
+          <h2>'하루'는 모든 것의 시작입니다</h2>
+          <p>
+            미래를 바꾸는 유일한 열쇠는 '오늘' 하루를 완벽하게 살아내는
+            힘입니다.<br />저희는 당신의 하루를 변화시킬 3단계 시스템을
+            제안합니다.
+          </p>
+        </div>
+        <div class="solution-flow">
+          <div class="flow-step">
+            <div class="step-number">01</div>
+            <h3>인식 (Awareness)</h3>
+            <p>
+              나의 현재 상태를 정확히 진단하고, 변화를 가로막는 근본 원인을
+              파악합니다.
+            </p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="step-number">02</div>
+            <h3>집중 (Focus)</h3>
+            <p>
+              불안을 잠재우고 현재에 몰입하는 기술을 통해 하루의 통제권을
+              되찾습니다.
+            </p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="step-number">03</div>
+            <h3>실행 (Action)</h3>
+            <p>
+              작은 성공을 쌓아나가는 실행 시스템을 구축하여 지속가능한 성장을
+              만듭니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- 4. 기능 및 혜택 섹션 (Features & Benefits)           -->
+      <!-- 목적: 솔루션을 구체화하는 핵심 프로그램과 제공되는 가치를 명확히 알려 고객의 구매 결정을 도움 -->
+      <!-- ====================================================== -->
+      <section id="features" class="container">
+        <div class="features-grid">
+          <div class="feature-text">
+            <div class="section-title">
+              <h2>당신만을 위한<br />집중 성장 프로그램</h2>
+              <p>
+                단순한 동기부여를 넘어, 당신의 삶에 실제로 적용 가능한 도구와
+                전략을 제공합니다.
+              </p>
+            </div>
+          </div>
+          <div class="feature-cards-wrapper">
+            <div class="feature-card">
+              <div class="icon">👥</div>
+              <div>
+                <h3>1:1 맞춤형 코칭</h3>
+                <p>
+                  10년간의 경험을 녹여낸 코치가 당신의 고유한 상황에 맞는 최적의
+                  솔루션을 함께 찾습니다.
+                </p>
+              </div>
+            </div>
+            <br />
+            <div class="feature-card">
+              <div class="icon">✍️</div>
+              <div>
+                <h3>실행 중심 워크북</h3>
+                <p>
+                  생각에만 머무르지 않고, 매일의 행동으로 이어질 수 있도록
+                  설계된 실천적인 워크북을 제공합니다.
+                </p>
+              </div>
+            </div>
+            <br />
+            <div class="feature-card">
+              <div class="icon">💬</div>
+              <div>
+                <h3>성장 파트너 커뮤니티</h3>
+                <p>
+                  같은 목표를 가진 사람들과 함께 지지하고 격려하며, 포기하지
+                  않고 나아갈 힘을 얻습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- 5. 후기 섹션 (Testimonials Section)                   -->
+      <!-- 목적: 실제 고객의 긍정적인 경험을 통해 사회적 증거(Social Proof)를 제시하고, 잠재 고객의 신뢰도와 구매 확신을 높임 -->
+      <!-- ====================================================== -->
+      <section id="testimonials" class="container">
+        <div class="section-title">
+          <h2>먼저 경험한 분들의 이야기</h2>
+        </div>
+        <div class="testimonial-cards">
+          <div class="testimonial-card">
+            <p class="quote">
+              "매일 아침 눈을 뜨는 게 두려웠는데, 이제는 오늘 하루 동안 무엇을
+              이룰 수 있을지 기대돼요. 제 인생의 통제권을 되찾은 기분입니다."
+            </p>
+            <p class="author">김민준 님 <span>(3년차 직장인)</span></p>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">
+              "뜬구름 잡는 이야기가 아니라, '오늘 뭘 해야 하는지'를 명확하게
+              알려줘서 좋았어요. 덕분에 미뤄왔던 사이드 프로젝트를 드디어
+              시작했습니다!"
+            </p>
+            <p class="author">박서연 님 <span>(프리랜서 디자이너)</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- 6. 최신 소식 섹션 (News Section)                      -->
+      <!-- 목적: 네이버 블로그의 최신 콘텐츠를 통해 브랜드의 활발한 활동과 전문성을 보여주고, 사용자의 지속적인 관심을 유도 -->
+      <!-- ====================================================== -->
+      <section id="news" class="container">
+        <div class="section-title">
+          <h2>최신 소식</h2>
+          <p>하루와 함께하는 변화의 이야기들을 확인해보세요</p>
+        </div>
+        
+        <div class="news-container">
+          <!-- 로딩 상태 -->
+          <div id="newsLoading" class="news-loading">
+            <div class="loading-spinner"></div>
+            <p>최신 소식을 불러오는 중...</p>
+          </div>
+          
+          <!-- 에러 상태 -->
+          <div id="newsError" class="news-error" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <h3>소식을 불러올 수 없습니다</h3>
+            <p>잠시 후 다시 시도해주세요</p>
+            <button id="retryNewsBtn" class="retry-btn">다시 시도</button>
+          </div>
+          
+          <!-- 뉴스 그리드 -->
+          <div id="newsGrid" class="news-grid" style="display: none;">
+            <!-- 동적으로 생성될 뉴스 카드들 -->
+          </div>
+          
+          <!-- 더보기 버튼 -->
+          <div id="newsLoadMore" class="news-load-more" style="display: none;">
+            <button id="loadMoreBtn" class="load-more-btn">더 많은 소식 보기</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- 6. 콜투액션(CTA) 섹션 (Call to Action Section)        -->
+      <!-- 목적: 페이지 이탈 직전의 고객을 붙잡아, 마지막으로 한 번 더 강력하게 행동(전환)을 촉구 -->
+      <!-- ====================================================== -->
+      <section id="final-cta">
+        <h2>이제, 당신의 가장 빛나는<br />'하루'를 시작할 시간입니다.</h2>
+        <p>변화는 선택하는 순간 시작됩니다. 더 이상 망설이지 마세요.</p>
+        <a href="#" class="cta-button">황금빛 미래로 가는 티켓 받기</a>
+      </section>
+    </main>
+
+    <!-- ====================================================== -->
+    <!-- 7. 푸터 (Footer)                                      -->
+    <!-- 목적: 브랜드의 기본 정보, 연락처, 저작권 등을 명시하여 신뢰도를 더함 -->
+    <!-- ====================================================== -->
+    <footer>
+      <div class="footer-logo">하루 (Haru)</div>
+      <div class="footer-links">
+        <a href="mailto:contact@haru.com">이메일 문의</a>
+        <a href="#">인스타그램</a>
+        <a href="#">개인정보처리방침</a>
+      </div>
+      <div class="footer-info">
+        <p>상호명: 하루 컨설팅 | 대표: 임정우 | 사업자등록번호: 000-00-00000</p>
+        <p>주소: 서울특별시 강남구 테헤란로 000</p>
+      </div>
+      <div class="copyright">© 2025 Haru Consulting. All Rights Reserved.</div>
+    </footer>
+
+    <!-- 컨설팅 신청 모달 -->
+    <div id="consultingModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>무료 컨설팅 신청</h2>
+          <p>당신의 변화를 위한 첫 걸음을 시작하세요</p>
+        </div>
+
+        <form id="consultingForm">
+          <div class="form-group">
+            <label for="name">이름 *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">이메일 *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">연락처 *</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+
+          <button type="submit" class="submit-btn">무료 컨설팅 신청하기</button>
+        </form>
+
+        <div id="formSuccess" style="display: none">
+          <div class="success-message">
+            <h3>🎉 신청이 완료되었습니다!</h3>
+            <p>빠른 시일 내에 연락드리겠습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supabase 클라이언트 및 컨설팅 폼 스크립트 -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
