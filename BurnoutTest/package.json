@@ -2,13 +2,6 @@
   "name": "haru-burnout-test",
   "version": "1.0.0",
   "description": "하루 번아웃 진단테스트 - 1차·2차 통합 진단 시스템",
-  "main": "burnout-test.html",
-  "scripts": {
-    "dev": "python -m http.server 8000",
-    "build": "echo 'Static site - no build needed'",
-    "preview": "python -m http.server 8000",
-    "start": "python -m http.server 8000"
-  },
   "keywords": [
     "burnout",
     "test",
