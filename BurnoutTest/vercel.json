@@ -1,41 +1,17 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "burnout-test.html",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/burnout-test.html"
     }
   ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/burnout-test.html"
-    },
-    {
-      "src": "/index",
-      "dest": "/burnout-test.html"
-    },
-    {
-      "src": "/test",
-      "dest": "/burnout-test.html"
-    }
-  ],
-  "functions": {},
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
