@@ -1,37 +1,23 @@
 {
-  "name": "burnout-test",
+  "name": "haru-burnout-test",
   "version": "1.0.0",
-  "description": "번아웃 1차·2차 통합 테스트 - HaruBurnoutTest",
-  "main": "index.js",
+  "description": "하루 번아웃 진단테스트 - 1차·2차 통합 진단 시스템",
+  "main": "burnout-test.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "start": "vite"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1",
-    "framer-motion": "^10.16.4"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site - no build needed'",
+    "preview": "python -m http.server 8000",
+    "start": "python -m http.server 8000"
   },
   "keywords": [
     "burnout",
     "test",
     "mental-health",
-    "react",
-    "typescript"
+    "stress",
+    "diagnosis",
+    "korean"
   ],
   "author": "HaruBurnoutTest",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://haru-burnout-test.vercel.app"
 }
