@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2D5A3D 0%, #4A7C59 50%, #6B9B7A 100%);
             min-height: 100vh;
             color: #333;
         }
@@ -64,7 +64,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #4A7C59, #6B9B7A);
         }
 
         .progress-bar {
@@ -78,7 +78,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #4A7C59, #6B9B7A);
             transition: width 0.5s ease;
             border-radius: 4px;
             position: relative;
@@ -128,7 +128,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #4A7C59, #6B9B7A);
         }
 
         .question-card.show {
@@ -140,14 +140,14 @@
             display: inline-block;
             width: 35px;
             height: 35px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4A7C59, #6B9B7A);
             color: white;
             border-radius: 50%;
             text-align: center;
             line-height: 35px;
             font-weight: bold;
             margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
             transition: all 0.3s ease;
         }
 
@@ -182,17 +182,17 @@
         }
 
         .option:hover {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: #6B9B7A;
+            background: #f0f8f2;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.2);
         }
 
         .option.selected {
-            border-color: #667eea;
-            background: #e8f2ff;
+            border-color: #4A7C59;
+            background: #e8f5e8;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
         }
 
         .option.selected::before {
@@ -202,13 +202,13 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #4A7C59, #6B9B7A);
         }
 
         .option input[type="radio"] {
             margin-right: 12px;
             transform: scale(1.3);
-            accent-color: #667eea;
+            accent-color: #4A7C59;
         }
 
         .option label {
@@ -236,7 +236,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4A7C59, #6B9B7A);
             color: white;
             position: relative;
             overflow: hidden;
@@ -259,7 +259,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(74, 124, 89, 0.4);
         }
 
         .btn-secondary {
@@ -313,20 +313,20 @@
 
         .btn:not(:disabled):focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.3);
         }
 
         .btn:not(:disabled):focus-visible {
-            outline: 2px solid #667eea;
+            outline: 2px solid #4A7C59;
             outline-offset: 2px;
         }
 
         .btn:not(:disabled):focus-visible:active {
-            outline: 2px solid #764ba2;
+            outline: 2px solid #6B9B7A;
         }
 
         .btn:not(:disabled):focus-visible:hover {
-            outline: 2px solid #667eea;
+            outline: 2px solid #4A7C59;
         }
 
         .btn:not(:disabled):focus-visible:focus {
@@ -487,15 +487,16 @@
 
         .results-container {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 40px;
             margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(15, 81, 50, 0.08);
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(25, 135, 84, 0.1);
         }
 
         .results-container::before {
@@ -505,7 +506,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #4A7C59, #6B9B7A);
         }
 
         .results-container.show {
@@ -515,11 +516,12 @@
 
         .result-card {
             background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #4A7C59;
             transition: all 0.3s ease;
+            border: 1px solid rgba(74, 124, 89, 0.1);
         }
 
         .result-card:hover {
@@ -528,17 +530,18 @@
         }
 
         .result-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2C3E50;
+            border-bottom: 3px solid #4A7C59;
+            padding-bottom: 10px;
         }
 
         .result-content {
-            color: #666;
-            line-height: 1.6;
-            font-size: 1rem;
+            color: #34495E;
+            line-height: 1.7;
+            font-size: 1.1rem;
         }
 
         .type-distribution {
@@ -563,10 +566,10 @@
         }
 
         .type-item.primary {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: #4A7C59;
+            background: #f0f8f2;
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 20px rgba(74, 124, 89, 0.3);
         }
 
         .type-name {
@@ -578,7 +581,7 @@
         .type-percentage {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #667eea;
+            color: #4A7C59;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
@@ -601,10 +604,112 @@
 
         .stage-pill.active {
             background: white;
-            color: #667eea;
+            color: #4A7C59;
             transform: scale(1.05);
             box-shadow: 0 4px 15px rgba(255,255,255,0.3);
             font-weight: 600;
+        }
+
+        .stage-separator {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #F0F8F2 0%, #E8F5E8 100%);
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(74, 124, 89, 0.1);
+        }
+
+        .stage-separator h2 {
+            color: #4A7C59;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .stage-separator p {
+            color: #495057;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .continue-btn {
+            background: linear-gradient(135deg, #4A7C59 0%, #6B9B7A 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(74, 124, 89, 0.3);
+        }
+
+        .continue-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(74, 124, 89, 0.4);
+            background: linear-gradient(135deg, #3A6B49 0%, #5A8B69 100%);
+        }
+
+        .consultation-card {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid #4A7C59;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consultation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4A7C59, #6B9B7A);
+        }
+
+        .consultation-card h3 {
+            color: #4A7C59;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .consultation-card p {
+            color: #495057;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .consultation-btn {
+            background: linear-gradient(135deg, #4A7C59 0%, #6B9B7A 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(74, 124, 89, 0.3);
+        }
+
+        .consultation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(74, 124, 89, 0.4);
+            background: linear-gradient(135deg, #3A6B49 0%, #5A8B69 100%);
+            text-decoration: none;
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -1037,14 +1142,11 @@
             } else {
                 // 현재 단계 완료
                 if (currentStage === 1) {
-                    // 1차 진단 완료, 2차로 이동
-                    currentStage = 2;
-                    currentQuestionIndex = 0;
-                    updateStageIndicator();
-                    showQuestion();
+                    // 1차 진단 완료, 1차 결과 표시
+                    showStage1Results();
                 } else {
-                    // 2차 진단 완료, 결과 표시
-                    showResults();
+                    // 2차 진단 완료, 종합 결과 표시
+                    showFinalResults();
                 }
             }
         }
@@ -1060,8 +1162,12 @@
         }
 
         function updateProgress() {
-            const totalAnswered = Object.keys(stage1Answers).length + Object.keys(stage2Answers).length;
-            const progress = (totalAnswered / totalQuestions) * 100;
+            const isStage1 = currentStage === 1;
+            const currentQuestions = isStage1 ? stage1Questions : stage2Questions;
+            const currentAnswers = isStage1 ? stage1Answers : stage2Answers;
+            const currentAnswered = Object.keys(currentAnswers).length;
+            const currentTotal = currentQuestions.length;
+            const progress = (currentAnswered / currentTotal) * 100;
             
             // 진행률 바 업데이트
             const progressFill = document.getElementById('progress-fill');
@@ -1069,12 +1175,12 @@
             
             if (progressFill && progressText) {
                 progressFill.style.width = `${progress}%`;
-                progressText.textContent = `진행도: ${totalAnswered}/${totalQuestions} (${Math.round(progress)}%)`;
+                progressText.textContent = `진행도: ${currentAnswered}/${currentTotal} (${Math.round(progress)}%)`;
                 
-                // 22문항 모두 완료시 100%로 설정
-                if (totalAnswered === totalQuestions) {
+                // 현재 단계 완료시 100%로 설정
+                if (currentAnswered === currentTotal) {
                     progressFill.style.width = '100%';
-                    progressText.textContent = `진행도: ${totalAnswered}/${totalQuestions} (100%)`;
+                    progressText.textContent = `진행도: ${currentAnswered}/${currentTotal} (100%)`;
                 }
             }
         }
@@ -1108,7 +1214,85 @@
             return { scores, distribution };
         }
 
-        function showResults() {
+        function showStage1Results() {
+            const stage1Result = calculateStage1Result();
+            
+            // 스테이지 인디케이터 업데이트
+            updateStageIndicator();
+            
+            const resultsHtml = `
+                <div class="result-card">
+                    <div class="result-title">🎯 1차 진단 결과</div>
+                    <div class="result-content">
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="font-size: 3rem; font-weight: bold; color: ${stage1Result.band ? stage1Result.band.color : '#198754'}; margin-bottom: 10px;">
+                                ${stage1Result.total}/60
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: ${stage1Result.band ? stage1Result.band.color : '#198754'};">
+                                ${stage1Result.band ? stage1Result.band.label : '등급 계산 실패'}
+                            </div>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                            <h4 style="color: #198754; margin-bottom: 10px;">📊 점수 해석</h4>
+                            <p style="margin-bottom: 10px;"><strong>낮은 위험 (0-20점):</strong> 번아웃 위험이 낮습니다. 현재 상태를 유지하세요.</p>
+                            <p style="margin-bottom: 10px;"><strong>보통 위험 (21-40점):</strong> 주의가 필요합니다. 스트레스 관리에 신경 쓰세요.</p>
+                            <p><strong>높은 위험 (41-60점):</strong> 전문가 상담을 권장합니다. 즉시 도움을 받으세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage-separator">
+                    <h2>🔍 2차 진단으로 넘어가기</h2>
+                    <p>1차 진단이 완료되었습니다. 이제 번아웃 유형을 분석하는 2차 진단을 진행해보세요.</p>
+                    <p>2차 진단에서는 과부하형, 방치형, 좌절형 중 어떤 유형에 해당하는지 확인할 수 있습니다.</p>
+                    <button class="continue-btn" onclick="startStage2()">2차 진단 시작하기</button>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" onclick="resetTest()">처음부터 다시</button>
+                    <button class="btn btn-primary" onclick="window.location.reload()">새로 시작</button>
+                </div>
+            `;
+
+            // 결과 표시
+            const resultsContent = document.getElementById('results-content');
+            const resultsContainer = document.getElementById('results-container');
+            const questionContainer = document.getElementById('question-container');
+            const buttonContainer = document.getElementById('button-container');
+            const progressContainer = document.getElementById('progress-container');
+            
+            if (resultsContent) resultsContent.innerHTML = resultsHtml;
+            if (resultsContainer) resultsContainer.classList.add('show');
+            if (questionContainer) questionContainer.style.display = 'none';
+            if (buttonContainer) buttonContainer.style.display = 'none';
+            if (progressContainer) progressContainer.style.display = 'none';
+        }
+
+        function startStage2() {
+            // 2차 진단 시작
+            currentStage = 2;
+            currentQuestionIndex = 0;
+            
+            // UI 업데이트
+            updateStageIndicator();
+            
+            // 결과 컨테이너 숨기기
+            const resultsContainer = document.getElementById('results-container');
+            const questionContainer = document.getElementById('question-container');
+            const buttonContainer = document.getElementById('button-container');
+            const progressContainer = document.getElementById('progress-container');
+            
+            if (resultsContainer) resultsContainer.classList.remove('show');
+            if (questionContainer) questionContainer.style.display = 'block';
+            if (buttonContainer) buttonContainer.style.display = 'flex';
+            if (progressContainer) progressContainer.style.display = 'block';
+            
+            // 첫 번째 질문 표시
+            showQuestion();
+            updateProgress();
+        }
+
+        function showFinalResults() {
             const stage1Result = calculateStage1Result();
             const stage2Result = calculateStage2Result();
             
@@ -1121,7 +1305,7 @@
             
             const resultsHtml = `
                 <div class="result-card">
-                    <div class="result-title">1차 진단 결과</div>
+                    <div class="result-title">🎯 1차 진단 결과</div>
                     <div class="result-content">
                         <strong>총점: ${stage1Result.total} / 60</strong><br>
                         ${stage1Result.band ? `<span style="color: ${stage1Result.band.color}; font-weight: bold;">${stage1Result.band.label}</span>` : '등급 계산 실패'}
@@ -1129,7 +1313,7 @@
                 </div>
 
                 <div class="result-card">
-                    <div class="result-title">2차 유형 분포</div>
+                    <div class="result-title">🔍 2차 유형 분포</div>
                     <div class="type-distribution">
                         ${stage2Result.distribution.map((item, index) => `
                             <div class="type-item ${index === 0 ? 'primary' : ''}">
@@ -1147,7 +1331,7 @@
                 </div>
 
                 <div class="result-card">
-                    <div class="result-title">유형 해설</div>
+                    <div class="result-title">📚 유형 해설</div>
                     <div class="result-content">
                         ${Object.entries(typeDescriptions).map(([key, desc]) => `
                             <div style="margin-bottom: 15px;">
@@ -1156,6 +1340,15 @@
                             </div>
                         `).join('')}
                     </div>
+                </div>
+
+                <div class="consultation-card">
+                    <h3>💡 1:1 번아웃 무료 전화상담 신청</h3>
+                    <p>매일 하루가 답답하고 불안하고 괴로운데 어떻게 해결해야 될지 모르시지 않으시나요?</p>
+                    <p>번아웃 하루 코칭은 '하루'라는 단위에 온전히 몰입함으로써, 불안 없이 일과 삶을 분리하고 번아웃을 극복하고 나의 일상을 회복할 수 있도록 돕습니다.</p>
+                    <a href="https://forms.gle/QFJMPVWV9nRq862j6" target="_blank" class="consultation-btn">
+                        무료 전화상담 신청하기
+                    </a>
                 </div>
 
                 <div class="button-container">
