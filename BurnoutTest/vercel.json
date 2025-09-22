@@ -1,27 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "burnout-test.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "index.html", 
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/burnout-test.html"
-    },
-    {
-      "src": "/index.html",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/burnout-test.html",
-      "dest": "/burnout-test.html"
+      "source": "/",
+      "destination": "/burnout-test.html"
     }
   ]
 }

@@ -2,6 +2,9 @@
   "name": "haru-burnout-test",
   "version": "1.0.0",
   "description": "하루 번아웃 진단테스트 - 1차·2차 통합 진단 시스템",
+  "scripts": {
+    "build": "echo 'No build step required for static HTML'"
+  },
   "keywords": [
     "burnout",
     "test",
@@ -11,6 +14,5 @@
     "korean"
   ],
   "author": "HaruBurnoutTest",
-  "license": "MIT",
-  "homepage": "https://haru-burnout-test.vercel.app"
+  "license": "MIT"
 }
