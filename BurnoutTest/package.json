@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "하루 번아웃 진단테스트 - 1차·2차 통합 진단 시스템",
   "scripts": {
-    "build": "echo 'No build step required for static HTML'"
+    "build": "mkdir -p dist && cp *.html dist/",
+    "dev": "echo 'Static HTML site - no dev server needed'"
   },
   "keywords": [
     "burnout",
