@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "BurnoutTest",
   "rewrites": [
     {
       "source": "/(.*)",
