@@ -1266,6 +1266,12 @@
             if (questionContainer) questionContainer.style.display = 'none';
             if (buttonContainer) buttonContainer.style.display = 'none';
             if (progressContainer) progressContainer.style.display = 'none';
+            
+            // 스크롤을 최상단으로 이동 (UX 개선)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         function startStage2() {
@@ -1286,6 +1292,12 @@
             if (questionContainer) questionContainer.style.display = 'block';
             if (buttonContainer) buttonContainer.style.display = 'flex';
             if (progressContainer) progressContainer.style.display = 'block';
+            
+            // 스크롤을 최상단으로 이동 (UX 개선)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
             
             // 첫 번째 질문 표시
             showQuestion();
@@ -1369,6 +1381,12 @@
             if (questionContainer) questionContainer.style.display = 'none';
             if (buttonContainer) buttonContainer.style.display = 'none';
             if (progressContainer) progressContainer.style.display = 'none';
+            
+            // 스크롤을 최상단으로 이동 (UX 개선)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         function resetTest() {
@@ -1409,6 +1427,12 @@
             // 첫 번째 질문 표시
             showQuestion();
             updateProgress();
+            
+            // 스크롤을 최상단으로 이동 (UX 개선)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
             
             // 다음 버튼 상태 업데이트 (showQuestion 후에 실행)
             setTimeout(() => {
